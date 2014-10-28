@@ -1,9 +1,10 @@
 {
-  "name": "RippleTransactions",
+  "name": "RippleAddress",
+  "plural": "RippleAddresses",
   "idInjection": false,
   "postgresql": {
     "schema": "public",
-    "table": "ripple_transactions"
+    "table": "ripple_addresses"
   },
   "properties": {
     "id": {
@@ -21,44 +22,89 @@
         "nullable": "NO"
       }
     },
-    "toAddressId": {
-      "type": "Number",
+    "managed": {
+      "type": "Boolean",
       "required": false,
       "length": null,
-      "precision": 32,
-      "scale": 0,
+      "precision": null,
+      "scale": null,
       "postgresql": {
-        "columnName": "to_address_id",
-        "dataType": "integer",
+        "columnName": "managed",
+        "dataType": "boolean",
         "dataLength": null,
-        "dataPrecision": 32,
-        "dataScale": 0,
+        "dataPrecision": null,
+        "dataScale": null,
         "nullable": "NO"
       }
     },
-    "fromAddressId": {
-      "type": "Number",
-      "required": false,
-      "length": null,
-      "precision": 32,
-      "scale": 0,
-      "postgresql": {
-        "columnName": "from_address_id",
-        "dataType": "integer",
-        "dataLength": null,
-        "dataPrecision": 32,
-        "dataScale": 0,
-        "nullable": "NO"
-      }
-    },
-    "transactionState": {
+    "address": {
       "type": "String",
       "required": false,
       "length": null,
       "precision": null,
       "scale": null,
       "postgresql": {
-        "columnName": "transaction_state",
+        "columnName": "address",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "type": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "type",
+        "dataType": "character varying",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      }
+    },
+    "userId": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 32,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": 32,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "tag": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 32,
+      "scale": 0,
+      "postgresql": {
+        "columnName": "tag",
+        "dataType": "integer",
+        "dataLength": null,
+        "dataPrecision": 32,
+        "dataScale": 0,
+        "nullable": "YES"
+      }
+    },
+    "secret": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "postgresql": {
+        "columnName": "secret",
         "dataType": "character varying",
         "dataLength": null,
         "dataPrecision": null,
@@ -66,109 +112,19 @@
         "nullable": "YES"
       }
     },
-    "transactionHash": {
+    "previousTransactionHash": {
       "type": "String",
       "required": false,
       "length": null,
       "precision": null,
       "scale": null,
       "postgresql": {
-        "columnName": "transaction_hash",
+        "columnName": "previous_transaction_hash",
         "dataType": "character varying",
         "dataLength": null,
         "dataPrecision": null,
         "dataScale": null,
         "nullable": "YES"
-      }
-    },
-    "toAmount": {
-      "type": "Number",
-      "required": false,
-      "length": null,
-      "precision": null,
-      "scale": null,
-      "postgresql": {
-        "columnName": "to_amount",
-        "dataType": "numeric",
-        "dataLength": null,
-        "dataPrecision": null,
-        "dataScale": null,
-        "nullable": "NO"
-      }
-    },
-    "toCurrency": {
-      "type": "String",
-      "required": false,
-      "length": null,
-      "precision": null,
-      "scale": null,
-      "postgresql": {
-        "columnName": "to_currency",
-        "dataType": "character varying",
-        "dataLength": null,
-        "dataPrecision": null,
-        "dataScale": null,
-        "nullable": "NO"
-      }
-    },
-    "toIssuer": {
-      "type": "String",
-      "required": false,
-      "length": null,
-      "precision": null,
-      "scale": null,
-      "postgresql": {
-        "columnName": "to_issuer",
-        "dataType": "character varying",
-        "dataLength": null,
-        "dataPrecision": null,
-        "dataScale": null,
-        "nullable": "NO"
-      }
-    },
-    "fromAmount": {
-      "type": "Number",
-      "required": false,
-      "length": null,
-      "precision": null,
-      "scale": null,
-      "postgresql": {
-        "columnName": "from_amount",
-        "dataType": "numeric",
-        "dataLength": null,
-        "dataPrecision": null,
-        "dataScale": null,
-        "nullable": "NO"
-      }
-    },
-    "fromCurrency": {
-      "type": "String",
-      "required": false,
-      "length": null,
-      "precision": null,
-      "scale": null,
-      "postgresql": {
-        "columnName": "from_currency",
-        "dataType": "character varying",
-        "dataLength": null,
-        "dataPrecision": null,
-        "dataScale": null,
-        "nullable": "NO"
-      }
-    },
-    "fromIssuer": {
-      "type": "String",
-      "required": false,
-      "length": null,
-      "precision": null,
-      "scale": null,
-      "postgresql": {
-        "columnName": "from_issuer",
-        "dataType": "character varying",
-        "dataLength": null,
-        "dataPrecision": null,
-        "dataScale": null,
-        "nullable": "NO"
       }
     },
     "createdat": {
@@ -228,51 +184,6 @@
         "dataLength": null,
         "dataPrecision": null,
         "dataScale": null,
-        "nullable": "YES"
-      }
-    },
-    "clientResourceId": {
-      "type": "String",
-      "required": false,
-      "length": null,
-      "precision": null,
-      "scale": null,
-      "postgresql": {
-        "columnName": "client_resource_id",
-        "dataType": "character varying",
-        "dataLength": null,
-        "dataPrecision": null,
-        "dataScale": null,
-        "nullable": "YES"
-      }
-    },
-    "state": {
-      "type": "String",
-      "required": false,
-      "length": null,
-      "precision": null,
-      "scale": null,
-      "postgresql": {
-        "columnName": "state",
-        "dataType": "character varying",
-        "dataLength": null,
-        "dataPrecision": null,
-        "dataScale": null,
-        "nullable": "YES"
-      }
-    },
-    "externalTransactionId": {
-      "type": "Number",
-      "required": false,
-      "length": null,
-      "precision": 32,
-      "scale": 0,
-      "postgresql": {
-        "columnName": "external_transaction_id",
-        "dataType": "integer",
-        "dataLength": null,
-        "dataPrecision": 32,
-        "dataScale": 0,
         "nullable": "YES"
       }
     }

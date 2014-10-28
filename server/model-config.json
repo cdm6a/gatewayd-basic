@@ -26,11 +26,11 @@
     "dataSource": "db",
     "public": false
   },
-  "RippleAddresses": {
+  "RippleAddress": {
     "dataSource": "gatewayd_db",
     "public": true
   },
-  "RippleTransactions": {
+  "RippleTransaction": {
     "dataSource": "gatewayd_db",
     "public": true
   }
