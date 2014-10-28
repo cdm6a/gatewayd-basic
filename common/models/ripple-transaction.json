@@ -1,6 +1,6 @@
 {
-  "name": "RippleTransaction",
-  "plural": "RippleTransactions",
+  "name": "ripple_transaction",
+  "plural": "ripple_transactions",
   "idInjection": false,
   "postgresql": {
     "schema": "public",

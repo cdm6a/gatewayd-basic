@@ -1,6 +1,6 @@
 {
-  "name": "RippleAddress",
-  "plural": "RippleAddresses",
+  "name": "ripple_address",
+  "plural": "ripple_addresses",
   "idInjection": false,
   "postgresql": {
     "schema": "public",
