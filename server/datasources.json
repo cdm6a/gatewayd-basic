@@ -1,0 +1,15 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "gatewayd_db": {
+    "host": "127.0.0.1",
+    "port": 5432,
+    "database": "gatewayd_db",
+    "username": "gatewayd_user",
+    "password": "",
+    "name": "gatewayd_db",
+    "connector": "postgresql"
+  }
+}
